@@ -1,4 +1,5 @@
 *venv*
+tests/.coverage
 __pychache__/
 tests/__pycache__/
 lib/__pycache__/
