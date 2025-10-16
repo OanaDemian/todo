@@ -41,3 +41,20 @@ def test_incomplete():
     todo_list.add(todo_3)
     todo_1.mark_complete()
     assert todo_list.incomplete() == [todo_2, todo_3]
+
+"""
+When we 3 todos
+Then mark one as complete
+#complete returns a list of the completed todo
+"""
+
+def test_complete():
+    todo_list = TodoList()
+    todo_1 = Todo("Feed the tarantula!")
+    todo_2 = Todo("Buy more food for the spider")
+    todo_3 = Todo("Clean the spider's den")
+    todo_list.add(todo_1)
+    todo_list.add(todo_2)
+    todo_list.add(todo_3)
+    todo_1.mark_complete()
+    assert todo_list.complete() == [todo_1]
