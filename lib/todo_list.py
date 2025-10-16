@@ -10,6 +10,8 @@ class TodoList:
         #   Nothing
         # Side-effects:
         #   Adds the todo to the list of todos
+        if todo.task.strip() == "":
+            raise Exception("Cannot add empty task to the tasklist")
         self._todos.append(todo)
 
     def get_todos(self):
