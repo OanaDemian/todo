@@ -18,4 +18,6 @@ class Todo:
         #   Nothing
         # Side-effects:
         #   Sets the complete property to True
+        if self.task.strip() == "":
+            raise Exception( "No task given. Add a new task!")
         self.complete = True
