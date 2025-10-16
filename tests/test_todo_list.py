@@ -1,6 +1,16 @@
 import pytest
 from lib.todo_list import TodoList
 from unittest.mock import Mock
+
+"""
+initially
+the todo list is empty
+"""
+
+def test_empty_todo_list_initially():
+    todo_list = TodoList()
+    assert todo_list.get_todos() == []
+
 """
 When we add one todo
 We get the todo back in the todos list
@@ -62,7 +72,7 @@ def test_todolist_complete():
     todo_3 = Mock("Clean the spider's den")
     todo_1.task = "Feed the tarantula!"
     todo_2.task = "Buy more food for the spider"
-    todo_3.task = "Clean the spider's de"
+    todo_3.task = "Clean the spider's den"
     todo_1.complete = False
     todo_2.complete = False
     todo_3.complete = False
@@ -71,3 +81,4 @@ def test_todolist_complete():
     todo_list.add(todo_3)
     todo_1.complete = True
     assert todo_list.complete() == [todo_1]
+

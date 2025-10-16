@@ -58,3 +58,19 @@ def test_complete():
     todo_list.add(todo_3)
     todo_1.mark_complete()
     assert todo_list.complete() == [todo_1]
+
+"""
+When we have 3 todos
+#give_up marks all todos complete
+"""
+
+def test_give_up_marks_all_todos_complete():
+    todo_list = TodoList()
+    todo_1 = Todo("Feed the tarantula!")
+    todo_2 = Todo("Buy more food for the spider")
+    todo_3 = Todo("Clean the spider's den")
+    todo_list.add(todo_1)
+    todo_list.add(todo_2)
+    todo_list.add(todo_3)
+    todo_list.give_up()
+    assert todo_1.complete and todo_2.complete and todo_3.complete
